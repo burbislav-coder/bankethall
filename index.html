@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название Банкетного Зала - Идеальное место для ваших событий</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Общие стили */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #c0392b;
+            --text-color: #333;
+            --background-light: #f9f9f9;
+            --background-white: #fff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--background-light);
+        }
+
+        h1, h2 {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Секция "Hero" (Главный экран) */
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.jpg');
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem); /* Адаптивный размер шрифта */
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .hero-text p {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-top: 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e74c3c;
+            transform: translateY(-2px);
+        }
+
+        /* Секции контента */
+        .content-section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 20px;
+        }
+
+        /* НОВАЯ ГАЛЕРЕЯ */
+        #gallery {
+            background-color: var(--background-white);
+            padding-bottom: 60px;
+        }
+
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .photo-grid img {
+            width: 220px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Стили для модального окна (Lightbox) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 85%;
+            max-width: 800px;
+            animation-name: zoom;
+            animation-duration: 0.5s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0.5)}
+            to {transform: scale(1)}
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        /* Секция контактов */
+        .contact-section {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .contact-section h2 { color: white; }
+        .contact-info { margin-top: 30px; font-size: 1.1rem; }
+        .contact-info p { margin: 10px 0; }
+
+        /* Футер (подвал сайта) */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="hero-text">
+            <h1>Банкет Холл</h1>
+            <p>Элегантность и роскошь для незабываемых моментов</p>
+            <a href="#contact" class="cta-button">Забронировать дату</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="content-section">
+            <h2>О нашем зале</h2>
+            <p>Добро пожаловать в Банкет Холл, где каждая деталь создана для того, чтобы ваше событие стало поистине особенным. Наш просторный и светлый зал с высокими потолками и живописным фонтаном идеально подходит для проведения свадеб, юбилеев, корпоративных мероприятий и гала-ужинов. Мы предлагаем просторную изолированную територию и зал вместимостью до 70 человек.</p>
+        </section>
+
+        <section id="gallery">
+            <div class="content-section" style="padding-bottom: 40px;">
+                 <h2>Галерея</h2>
+            </div>
+            <div class="photo-grid">
+                </div>
+        </section>
+
+        <section id="contact" class="content-section contact-section">
+            <h2>Свяжитесь с нами</h2>
+            <p>Мы будем рады ответить на все ваши вопросы и помочь в организации вашего идеального мероприятия. </p>
+            <div class="contact-info">
+                <p><strong>Адрес:</strong> д. Мерецкие</p>
+                <p><strong>Телефон:</strong> +375 29 294-12-09</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Банкет Холл. Все права защищены.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Массив с названиями ваших изображений
+            const images = [
+                '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', 
+                '6.jpg', '7.jpg', '8.jpg', '9.jpg'
+            ];
+            
+            const photoGrid = document.querySelector('.photo-grid');
+
+            // Создаем и добавляем изображения в галерею
+            images.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = 'Фотография банкетного зала';
+                photoGrid.appendChild(img);
+            });
+
+            // --- Логика для модального окна ---
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const gridImages = document.querySelectorAll('.photo-grid img');
+            const closeModal = document.querySelector('.close-modal');
+
+            // При клике на любое изображение в галерее
+            gridImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                });
+            });
+
+            // Функция для закрытия модального окна
+            function close() {
+                modal.style.display = "none";
+            }
+
+            // Закрытие по клику на "крестик"
+            closeModal.addEventListener('click', close);
+
+            // Закрытие по клику на фон (вне изображения)
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    close();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
